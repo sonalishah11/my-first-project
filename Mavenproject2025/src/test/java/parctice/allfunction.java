@@ -148,8 +148,7 @@ public class allfunction {
 
       
         driver.switchTo().window(parentWindow);
-
-     		
+	
 				
     }
 
