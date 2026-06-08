@@ -4,6 +4,9 @@ package parctice;
 
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -132,22 +135,23 @@ public class allfunction {
 
         Assert.assertEquals(actualText, expectedText, "Title does not match");*/
         
-        //Handle multiple windows
+        //Handle multiple windows 
         
         driver.get("https://demoqa.com/browser-windows");
 
         // Click to open new window
         driver.findElement(By.id("tabButton")).click();
 
-        // Parent window
+        // Parent window 
         String parentWindow = driver.getWindowHandle();
 
         // All windows
         //List<String> allWindows = new ArrayList(driver.getWindowHandles());
-        
-
+        Thread.sleep(3000);
+        List<String>id= new ArrayList(driver.getWindowHandles());
       
         driver.switchTo().window(parentWindow);
+        driver.switchTo().window(id.get(1));
 	
 				
     }
